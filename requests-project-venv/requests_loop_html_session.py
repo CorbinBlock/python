@@ -1,41 +1,38 @@
+import csv
 from requests_html import HTML, HTMLSession
+
+csv_file = open('cms_scrape.csv', 'w')
+csv_writer = csv.writer(csv_file)
+csv_writer.writerow(['headline', 'summary', 'video'])
 
 session = HTMLSession()
 r = session.get('https://coreyms.com/')
 
+for link in r.html.links:
+    print(link) #simply return every url from the web page (very common requirement so included in requests_html library)
 
-article = r.html.find('article', first=True)
+print()
+articles = r.html.find('article')
 
-headline = article.find('.entry-title-link', first=True).text
-print(headline)
+for article in articles:
 
-summary = article.find('.entry-content p', first=True).text
-print(summary)
+        headline = article.find('.entry-title-link', first=True).text
+        print(headline)
 
-#vid_src = article.find('iframe', first=True).html
-#print(vid_src)
+        summary = article.find('.entry-content p', first=True).text
+        print(summary)
 
-#parse embedded youtube URL
-vid_src = article.find('iframe', first=True).attrs['src']
-print(vid_src)
+        try:
+            vid_src = article.find('iframe', first=True).attrs['src']
+            vid_id = vid_src.split('/')[4]
+            vid_id = vid_id.split('?')[0]
+            yt_link = f'https://youtube.com/watch?v={vid_id}'
+        except Exception as e:
+            yt_link = None
 
+        print(yt_link)
+        print()
 
-#parse videoid from youtube URL string
-#print list of values in our string split by a forward flash
-#vid_id = vid_src.split('/')
-#print(vid_id)
-
-#return fourth index in list
-vid_id = vid_src.split('/')[4]
-print(vid_id)
-
-#now split with question mark('?') as the delimiter (this returns the URL perfectly)
-#vid_id = vid_src.split('?')[0]
-#print(vid_id)
-
-#now split with question mark('?') as the delimiter (video id)
-vid_id = vid_id.split('?')[0]
-print(vid_id)
-
-yt_link = f'https://youtube.com/watch?v={vid_id}'
-print(yt_link)
+        csv_writer.writerow([headline, summary, yt_link])
+        
+csv_file.close()
