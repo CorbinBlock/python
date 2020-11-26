@@ -1,5 +1,20 @@
+import os
+import sys
 import zipfile
 
-with zipfile.ZipFile('files.zip', 'w') as my_zip:
-    my_zip.write('test.txt')
-    my_zip.write('thumbnail.png')
+argOne= sys.argv[1]
+argTwo= sys.argv[2]
+
+fileNameNoExt  = argOne.replace('.txt','')
+zipName= '.zip'
+zipName= fileNameNoExt + zipName
+
+print(argOne)
+print(zipName)
+print(argTwo)
+os.chdir(argTwo)
+
+with zipfile.ZipFile(zipName, 'w') as my_zip:
+        my_zip.write(argOne)
+
+os.remove(argOne)
