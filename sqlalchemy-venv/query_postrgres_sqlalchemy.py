@@ -4,9 +4,6 @@ db = create_engine('postgresql+psycopg2:///', echo = True)
 
 query = """
 
-CREATE PROCEDURE createMint()
-LANGUAGE SQL
-AS $$;
 CREATE TABLE mint(
 recordid serial,
 loaddate date default current_date,
@@ -21,14 +18,13 @@ labels varchar(50),
 notes varchar(50)
 );
 
-
 """
 
 # Execute query
 result_set = db.execute(query)
 
-for r in result_set:  
-    print(r)
+#for r in result_set:  
+#    print(r)
 
 
 
