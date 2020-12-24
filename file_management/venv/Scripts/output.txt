@@ -1,0 +1,25 @@
+ Volume in drive C has no label.
+ Volume Serial Number is FC50-989E
+
+ Directory of C:\Users\Corbin\PycharmProjects\file_mgmt\venv\Scripts
+
+12/23/2020  05:43 PM    <DIR>          CORBINBLOCK\Corbin     .
+12/20/2020  01:42 PM    <DIR>          CORBINBLOCK\Corbin     ..
+12/20/2020  01:42 PM             1,991 CORBINBLOCK\Corbin     activate
+12/20/2020  01:42 PM               983 CORBINBLOCK\Corbin     activate.bat
+12/20/2020  01:42 PM            19,880 CORBINBLOCK\Corbin     Activate.ps1
+12/20/2020  01:42 PM               368 CORBINBLOCK\Corbin     deactivate.bat
+12/20/2020  01:43 PM           106,385 CORBINBLOCK\Corbin     easy_install-3.9.exe
+12/20/2020  01:43 PM           106,385 CORBINBLOCK\Corbin     easy_install.exe
+12/23/2020  05:43 PM             1,633 CORBINBLOCK\Corbin     open_program_subprocess.py
+12/23/2020  05:43 PM                 0 CORBINBLOCK\Corbin     output.txt
+12/20/2020  01:43 PM           106,376 CORBINBLOCK\Corbin     pip.exe
+12/20/2020  01:43 PM           106,376 CORBINBLOCK\Corbin     pip3.9.exe
+12/20/2020  01:43 PM           106,376 CORBINBLOCK\Corbin     pip3.exe
+12/20/2020  01:42 PM           536,120 CORBINBLOCK\Corbin     python.exe
+12/20/2020  01:42 PM           535,608 CORBINBLOCK\Corbin     pythonw.exe
+12/12/2020  12:04 PM               436 CORBINBLOCK\Corbin     unzip_files.py
+12/12/2020  11:07 AM               553 CORBINBLOCK\Corbin     zip_files.py
+12/12/2020  11:57 AM               316 CORBINBLOCK\Corbin     zip_service.py
+              16 File(s)      1,629,786 bytes
+               2 Dir(s)  156,000,432,128 bytes free
