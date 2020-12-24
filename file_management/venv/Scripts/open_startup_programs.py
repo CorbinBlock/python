@@ -17,8 +17,11 @@ def open_programs():
     winSCP = os.path.join(driveletter, basepath86, "WinSCP\\WinSCP.exe")
     malwarebytes = os.path.join(driveletter, basepath, "Malwarebytes\\Anti-Malware\\mbam.exe")
     spotify = os.path.join(driveletter, "\\Users\\Corbin\\AppData\\Roaming\\Spotify\\Spotify.exe")
+    githubdesktop = os.path.join(driveletter, "\\Users\\Corbin\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe")
+
+
     # arrange into list and store length
-    list = [vscode, notepadplusplus, keepass, outlook, pycharm, chrome, onenote, winSCP, malwarebytes, spotify]
+    list = [vscode, notepadplusplus, keepass, outlook, pycharm, chrome, onenote, winSCP, malwarebytes, spotify, githubdesktop]
     length = len(list)
     # iterate through list to open all programs
     for i in range(length):
