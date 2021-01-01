@@ -28,6 +28,6 @@ def open_programs():
     length = len(list)
     # iterate through list to open all programs
     for i in range(length):
-        subprocess.Popen(list[i])
+        subprocess.Popen(list[i]) 
 
 open_programs()

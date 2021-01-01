@@ -25,6 +25,7 @@ response.json()
 # parse JSON string into python dict
 json_data = json.loads(response.text)
 print(type(json_data))
+print(json_data["Time Series (Daily)"])
 
 with open("data_file.json", "w") as write_file:
     json.dump(json_data, write_file)
