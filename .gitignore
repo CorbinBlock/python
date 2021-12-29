@@ -1,0 +1,6 @@
+venv/
+database.ini
+__pycache__/
+run_list_s3_buckets_boto3.sh
+run_exec_upload_local_to_s3_boto3.sh
+run_list_files_s3_bucket_boto3.sh
