@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  writeToRDSMySQL:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      CodeUri: .
+      Description: ''
+      MemorySize: 128
+      Timeout: 3
+      Role: >-
+        arn:aws:iam::941738067377:role/service-role/pythonLambdaTest-role-6etg8e65
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-8cad5bd2
+        SubnetIds:
+          - subnet-66053048
+          - subnet-68f01066
+      Environment:
+        Variables:
+          db_name_lambda: lambda
+          rds_mysql_endpoint: sandbox.c4z31hpu9hyo.us-east-1.rds.amazonaws.com
+          rds_mysql_password: MwWCuYumb1vdawHqFzHp
+          rds_mysql_username: admin
