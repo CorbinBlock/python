@@ -15,7 +15,7 @@ inbox = mapi.GetDefaultFolder(6)
 
 messages = inbox.Items
 
-received_dt = datetime.now() - timedelta(days=7)
+received_dt = datetime.now() - timedelta(days=2)
 received_dt = received_dt.strftime('%m/%d/%Y %H:%M %p')
 messages = messages.Restrict("[ReceivedTime] >= '" + received_dt + "'")
 # messages = messages.Restrict("[SenderEmailAddress] = 'contact@codeforests.com'")
