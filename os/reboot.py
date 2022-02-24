@@ -1,10 +1,10 @@
 import os
 
 # cmd
-command = "shutdown /r"
+# command = "shutdown /r"
 
 #pwsh
-# command = "pwsh.exe -c ls"
+command = "pwsh.exe -c ls"
 
 
 
