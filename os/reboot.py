@@ -3,8 +3,7 @@ import sys
 
 shell = "pwsh.exe"
 option = "-c"
-command = "Restart-Computer -ComputerName "
-arg_one = sys.argv[1]
-command_string = f" {shell} {option} {command} {arg_one}"
+command = "Restart-Computer -ComputerName $(hostname)"
+command_string = f" {shell} {option} {command}"
 print(command_string)
 os.system(command_string)
