@@ -1,5 +1,4 @@
 import os
-import sys
 
 shell = "pwsh.exe"
 option = "-c"
