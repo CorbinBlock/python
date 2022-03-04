@@ -51,7 +51,8 @@ elif platform == "win32":
         print(f"{debian_command}")
         print(subprocess.run("wsl -u root"))
     elif "WIN-02-ASUS" in output_string:
-        print(subprocess.run(wsl_command_ssh))
+        print(subprocess.run([powershell, option, wsl_command_ssh]))
+        # print(subprocess.run(wsl_command_ssh))
     elif "CBLOCKDYFX2X2" in output_string:
         print(subprocess.run(wsl_command))
     else:
