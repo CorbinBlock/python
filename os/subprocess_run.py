@@ -15,9 +15,7 @@ dnf upgrade -y
 cd /git/python && git pull --no-rebase
 """
 
-wsl_command = """
-wsl apt-get update && apt-get upgrade -y && cd /git/python && git pull --no-rebase
-"""
+wsl_command = 'bash -c "apt-get update && apt-get upgrade -y && cd /git/python && git pull --no-rebase"'
 
 if platform == "linux" or platform == "linux2":
     print(f" {platform} server detected!")
@@ -44,6 +42,7 @@ elif platform == "win32":
         print(subprocess.run(wsl_command))
     elif "CBLOCKDYFX2X2" in output.stdout.decode('utf-8').split():
         print(subprocess.run(wsl_command))
+        # print(subprocess.run(wsl_command))
     else:
         print('hostname not found!')
 else:
