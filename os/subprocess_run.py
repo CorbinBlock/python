@@ -47,3 +47,4 @@ elif platform == "win32":
         print('hostname not found!')
 else:
     print(f" {platform} server detected! Please check server.")
+
