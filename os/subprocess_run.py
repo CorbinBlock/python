@@ -49,7 +49,6 @@ elif platform == "win32":
         print(subprocess.run(wsl_command))
     elif "CBLOCKDYFX2X2" in output_string:
         print(subprocess.run(wsl_command))
-        # print(subprocess.run(wsl_command))
     else:
         print('hostname not found!')
 else:
