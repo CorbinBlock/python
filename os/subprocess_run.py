@@ -7,17 +7,16 @@ hostname
 
 debian_command = """
 apt-get update && apt-get upgrade -y
-git clone https://github.com/CorbinBlock/python.git || (cd /git/python ; git pull --no-rebase)
+cd /git/python && git pull --no-rebase
 """
 
 fedora_command = """
 dnf upgrade -y
-git clone https://github.com/CorbinBlock/python.git || (cd /git/python ; git pull --no-rebase)
+cd /git/python && git pull --no-rebase
 """
 
 wsl_command = """
-apt-get update && apt-get upgrade -y
-git clone https://github.com/CorbinBlock/python.git || (cd /git/python ; git pull --no-rebase)
+wsl apt-get update && apt-get upgrade -y && cd /git/python && git pull --no-rebase
 """
 
 if platform == "linux" or platform == "linux2":
@@ -39,7 +38,7 @@ elif platform == "win32":
     print(f" {platform} server detected!")
     output = subprocess.run(["pwsh.exe", "-c", command], capture_output=True)
     if "WIN-01-LENOVO" in output.stdout.decode('utf-8').split():
-        print("apt-get update && apt-get upgrade -y && exit")
+        print(f"{debian_command}")
         print(subprocess.run("wsl -u root"))
     elif "WIN-02-ASUS" in output.stdout.decode('utf-8').split():
         print(subprocess.run(wsl_command))
