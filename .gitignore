@@ -1,4 +1,5 @@
 venv/
+.venv/
 database.ini
 __pycache__/
 run_list_s3_buckets_boto3.sh
