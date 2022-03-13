@@ -20,4 +20,6 @@ jobs:
           hostname
           cd os
           python update_nodes.py
+          cd ..
+          tree
       - run: echo "🍏 This job's status is ${{ job.status }}."

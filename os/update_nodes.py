@@ -19,8 +19,6 @@ cd /git/python && git pull --no-rebase
 no_hostname_command = """
 sudo apt-get update >> /dev/null
 sudo apt-get install vim git git-lfs python3 python3-pip python3-venv default-jre curl tree -y >> /dev/null
-cd ..
-tree
 """
 
 
