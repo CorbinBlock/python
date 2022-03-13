@@ -49,6 +49,7 @@ if platform == "linux" or platform == "linux2":
     elif "UNIX-02-FEDORA" in output_string:
         print(subprocess.run([shell, option, fedora_command]))
     else:
+        print('hostname not found!')
         print(subprocess.run([shell, option, no_hostname_command]))
 elif platform == "win32":
     print(f" {platform} server detected!")
@@ -63,6 +64,6 @@ elif platform == "win32":
     elif "CBLOCKDYFX2X2" in output_string:
         print(subprocess.run(wsl_command))
     else:
-        print('hostname not found!'
+        print('hostname not found!')
 else:
     print(f" {platform} server detected! Please check server.")
