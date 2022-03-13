@@ -17,8 +17,8 @@ cd /git/python && git pull --no-rebase
 """
 
 no_hostname_command = """
-apt-get update && apt-get upgrade -y
-apt-get install vim git git-lfs python3 python3-pip python3-venv openjdk-11-jdk curl -y
+sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get install vim git git-lfs python3 python3-pip python3-venv openjdk-11-jdk curl -y
 """
 
 
