@@ -15,6 +15,13 @@ fedora_command = """
 dnf upgrade -y
 cd /git/python && git pull --no-rebase
 """
+
+no_hostname_command = """
+apt-get update && apt-get upgrade -y
+apt-get install vim git git-lfs python3 python3-pip python3-venv openjdk-11-jdk curl -y
+"""
+
+
 option = "-c"
 
 powershell = "pwsh.exe"
@@ -43,6 +50,7 @@ if platform == "linux" or platform == "linux2":
         print(subprocess.run([shell, option, fedora_command]))
     else:
         print('hostname not found!')
+        print(subprocess.run([shell, option, no_hostname_command]))
 elif platform == "win32":
     print(f" {platform} server detected!")
     output = subprocess.run([powershell, option, command], capture_output=True)
@@ -56,6 +64,6 @@ elif platform == "win32":
     elif "CBLOCKDYFX2X2" in output_string:
         print(subprocess.run(wsl_command))
     else:
-        print('hostname not found!')
+        print('hostname not found!'
 else:
     print(f" {platform} server detected! Please check server.")
