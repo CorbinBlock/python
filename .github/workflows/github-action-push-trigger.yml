@@ -17,6 +17,7 @@ jobs:
           ls ${{ github.workspace }}
           sudo apt install neofetch >> /dev/null
           neofetch
+          hostname
           cd os
           python update_nodes.py
       - run: echo "🍏 This job's status is ${{ job.status }}."
